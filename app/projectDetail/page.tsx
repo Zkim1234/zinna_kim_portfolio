@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useSearchParams } from "next/navigation";
 import NavBar from "../../public/components/NavBar.jsx";
 import Footer from "../../public/components/Footer.jsx";
