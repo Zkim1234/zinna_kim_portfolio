@@ -1,0 +1,106 @@
+{
+  "projectsOverview": [
+    {
+      "name": "Solace",
+      "title": "UI/UX Wasn’t Enough, So I Learned Full-Stacks",
+      "role":[
+        "#Full-stack-Developer",
+        "#Social-Media-Manager",
+        "#Camera-Operator"
+      ],
+      "description": "I designed and built core app features, applied new learnings and AI tools, and led video production and social media efforts to support Solace’s mission.",
+      "thumbnail": "Solace/solace_overview_thumbnail_v1.png",
+      "images": [
+        "Solace/solace_overview_thumbnail_v2.png",
+        "Solace/solace_overview01.png",
+        "Solace/solace_overview02.png",
+        ""
+      ]
+    },
+    {
+      "name": "WhatSUP",
+      "title": "Figma Ideas, WordPress Execution",
+      "role": ["#WordPress-Developer", "#UI/UX-Designer"],
+      "description": "I developed and designed key website features and a transparent WordPress booking flow, improving clarity, reducing user confusion, and delivering a smooth, intuitive experience for all users.",
+      "thumbnail": "WhatSUP/whatSUP_overview_thumbnail_v1.png",
+      "images": [
+        "WhatSUP/whatSUP_overview_thumbnail_v2.png",
+        "WhatSUP/whatSUP_overview01.png",
+        "WhatSUP/whatSUP_overview02.png",
+        "WhatSUP/whatSUP_overview03.png"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "UI/UX Wasn’t Enough, So I Learned Full-Stacks",
+      "name": "Solace",
+      "date": "Sept 2025 to Dec 2025",
+      "role": [
+        "Full-stack Developer",
+        "Social Media Manager",
+        "Camera Operator"
+      ],
+      "link": "https://solace-promo.vercel.app/",
+      "description": "Solace is an AI-powered wellness app for ironworkers and trades workers, helping prevent physical pain, mental stress, and substance dependency. Through personalized stretches and calming soundscapes, it offers healthier alternatives to painkillers and alcohol for a community whose well-being is often overlooked.",
+      "thumbnail": "Solace/solace_header.png",
+      "projectOverview": "I designed and built core app features, applied new coding and AI tools, and led video production and social media efforts to support Solace’s mission.",
+      "overviewVideo": "Solace_ad.mp4",
+      "overviewVideoThumbnail": "video_thumbnails/solace_ad_thumbnail.png",
+      "myWorkTitle": "My Contributions",
+      "myWork": [
+       "Designed and developed stress-relief features, including breathing exercises and white-noise pages",
+      "Implemented login/sign-up flows, onboarding tutorials, and account settings pages",
+      "Applied new learnings and AI tools throughout the development process",
+      "Used AI tools such as Copilot and Cursor to accelerate and support development",
+      "Produced the promotional video from storyboarding to filming and post-production",
+      "Managed the project’s social media to promote Solace and communicate its mission"
+      ],
+      "myWorkImages": [
+        "../assets/Solace/solace_screens01.png",
+        "../assets/Solace/solace_screens02.png",
+        "../assets/Solace/solace_instagram.png"
+      ],
+      "conclusionTitle": "Project Conclusion",
+      "conclusion": "This project strengthened my ability to design and build impactful features while demonstrating strong communication skills and expanding my expertise in new tools, coding techniques, and AI-assisted workflows across design, development, and marketing.",
+      "conclusionImages": [
+        "../assets/Solace/solace_social_media.png",
+        "../assets/Solace/solace_brochure.png",
+        "../assets/Solace/solace_group.png"
+      ]
+    },
+    {
+      "title": "Figma Ideas, WordPress Execution",
+      "name": "WhatSUP",
+      "date": "Jan 2024 - May 2024",
+      "role": ["WordPress Developer", "UI/UX Designer"],
+      "link": "https://omnijacha.com/whatsup/",
+      "description": "WhatSUP is an online website for a kayak shop located on Bowen Island, Vancouver, offering camps, rentals, and lessons. The project focused on creating clear naming and branding that feels approachable and suitable for all ages, reflecting nature, water, sunshine, safety, fun, and adventure. The brand avoids a corporate feel and instead emphasizes a grass-roots, outgoing vibe centered on the experience, appealing to families, tourists, kids, business groups, summer camps, and sea kayakers.",
+      "thumbnail": "WhatSUP/whatSUP_header.png",
+      "projectOverview": "I developed and designed key website features and a transparent WordPress booking flow, improving clarity, reducing user confusion, and delivering a smooth, intuitive experience for all users.",
+      "overviewVideo": "WhatSUP_ad.mp4",
+      "overviewVideoThumbnail": "video_thumbnails/whatSUP_ad_thumbnail.png",
+        "myWorkTitle": "My Contributions",
+        "myWork": [
+          "Led the design and development of the booking process and waiver forms using WordPress",
+          "Designed clear page layouts and user-friendly booking flows",
+          "Implemented a progress bar to show booking steps and user status",
+          "Ensured transparent pricing with no hidden fees to reduce price confusion",
+          "Organized instructions to be clear, simple, and easy to read",
+          "Focused on minimizing user confusion and delivering a smooth, intuitive user experience"
+        ],
+      "myWorkImages": [
+        "../assets/WhatSUP/whatSUP_product_details.png",
+        "../assets/WhatSUP/whatSUP_payment.png",
+        "../assets/WhatSUP/whatSUP_waiver_form.png"
+      ],
+      "conclusionTitle": "Project Conclusion",
+      "conclusion": "This project strengthened my adaptability and problem-solving skills, delivering a clear, functional WordPress booking experience despite platform limitations, resulting in improved usability and a polished, user-centered final product.",
+      "conclusionImages": [
+        "../assets/WhatSUP/whatSUP_project_screen01.png",
+        "../assets/WhatSUP/whatSUP_project_screen02.png",
+        "../assets/WhatSUP/whatSUP_group_members.png"
+      ]
+    }
+  ]
+}
