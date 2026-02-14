@@ -1,20 +1,26 @@
-"use client";
-
-export const dynamic = "force-dynamic";
-
-import { useSearchParams } from "next/navigation";
 import NavBar from "../../public/components/NavBar.jsx";
 import Footer from "../../public/components/Footer.jsx";
 import ImageCarousel from "../../public/components/ImageCarousel.jsx";
 import StyledVideo from "../../public/components/StyledVideo.jsx";
 import projectsData from "../../projects.json";
 
-export default function ProjectDetail() {
-  const searchParams = useSearchParams();
-  const projectId = searchParams.get("id");
-  const queryKey = Array.from(searchParams.keys())[0];
+export const dynamic = "force-dynamic";
+
+type ProjectDetailPageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
+
+const getParamValue = (value?: string | string[]) =>
+  Array.isArray(value) ? value[0] : value || "";
+
+export default function ProjectDetail({
+  searchParams,
+}: ProjectDetailPageProps) {
+  const projectId = getParamValue(searchParams?.id);
+  const queryKey = searchParams ? Object.keys(searchParams)[0] : "";
   const rawSlug =
-    searchParams.get("project") || (queryKey !== "id" ? queryKey : "");
+    getParamValue(searchParams?.project) ||
+    (queryKey && queryKey !== "id" ? queryKey : "");
   const slug = rawSlug ? decodeURIComponent(rawSlug) : "";
 
   const slugify = (value: string) =>
