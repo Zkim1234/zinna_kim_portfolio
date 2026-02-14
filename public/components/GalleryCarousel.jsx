@@ -2,6 +2,9 @@
 
 import { useRef, useState } from "react";
 
+/**
+ * @param {{ images?: string[] }} props
+ */
 export default function GalleryCarousel({ images = [] }) {
   const carouselRef = useRef(null);
   const scrollbarRef = useRef(null);

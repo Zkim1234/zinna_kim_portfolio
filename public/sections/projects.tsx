@@ -42,6 +42,7 @@ export default function Projects() {
         thumbnail: "logo-grey.svg",
         projectOverview: "Stay tuned for upcoming work.",
         overviewVideo: "",
+        overviewVideoThumbnail: "logo-grey.svg",
         myWorkTitle: "Coming Soon",
         myWork: [],
         myWorkImages: [],
