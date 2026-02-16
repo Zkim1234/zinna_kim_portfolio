@@ -88,8 +88,8 @@ export default function Projects() {
 
   const handleSelect = (index: number) => {
     if (isMobile) {
-      const slug = slugify(projects[index]?.name || "");
-      router.push(`/projectDetail?project=${encodeURIComponent(slug)}`);
+      const projectId = String(index);
+      router.push(`/projectDetail?id=${encodeURIComponent(projectId)}`);
       return;
     }
     setSelectedIndex(index);
@@ -231,8 +231,8 @@ export default function Projects() {
               </p>
 
               <Link
-                href={`/projectDetail?project=${encodeURIComponent(
-                  slugify(cardProjects[selectedIndex]?.name || ""),
+                href={`/projectDetail?id=${encodeURIComponent(
+                  String(selectedIndex),
                 )}`}
                 className="inline-flex items-center gap-2 bg-[var(--navy-green)] text-white px-5 py-3 text-sm hover:opacity-90 w-fit"
               >

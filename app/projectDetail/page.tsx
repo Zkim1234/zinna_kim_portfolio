@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+"use client";
 
 import { useSearchParams } from "next/navigation";
 import NavBar from "../../public/components/NavBar.jsx";
@@ -7,37 +7,48 @@ import ImageCarousel from "../../public/components/ImageCarousel.jsx";
 import StyledVideo from "../../public/components/StyledVideo.jsx";
 import projectsData from "../../projects.json";
 
-"use client";
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
 
-export default function ProjectDetail() {
+const normalizeKey = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]/g, "");
+
+export const dynamic = "force-dynamic";
+
+export default function ProjectDetailPage() {
   const searchParams = useSearchParams();
   const projectId = searchParams.get("id") || "";
   const rawSlug = searchParams.get("project") || "";
   const slug = rawSlug ? decodeURIComponent(rawSlug) : "";
 
-  const slugify = (value: string) =>
-    value
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, "-")
-      .replace(/[^a-z0-9-]/g, "");
-
   const projectIndex = projectId ? parseInt(projectId, 10) : -1;
   const normalizedSlug = slug ? slugify(slug) : "";
+  const normalizedKey = slug ? normalizeKey(slug) : "";
   const projectBySlugIndex = normalizedSlug
     ? projectsData.projects.findIndex(
         (item: { name: string; title?: string }) =>
-          [item.name, item.title]
-            .filter(Boolean)
-            .some((value) => slugify(value as string) === normalizedSlug),
+          [item.name, item.title].filter(Boolean).some((value) => {
+            const text = value as string;
+            return (
+              slugify(text) === normalizedSlug ||
+              normalizeKey(text) === normalizedKey
+            );
+          }),
       )
     : -1;
 
   const resolvedIndex =
-    projectBySlugIndex >= 0
-      ? projectBySlugIndex
-      : projectIndex >= 0
-        ? projectIndex
+    projectIndex >= 0 && projectIndex < projectsData.projects.length
+      ? projectIndex
+      : projectBySlugIndex >= 0
+        ? projectBySlugIndex
         : 0;
 
   const project =

@@ -6,7 +6,7 @@ export default function BigProjectSection({ project, projectIndex }) {
       .replace(/\s+/g, "-")
       .replace(/[^a-z0-9-]/g, "");
 
-  const projectSlug = encodeURIComponent(slugify(project?.name || ""));
+  const projectId = encodeURIComponent(String(projectIndex ?? 0));
 
   return (
     <section className="my-20 w-full px-4 sm:px-8 lg:px-16">
@@ -26,7 +26,7 @@ export default function BigProjectSection({ project, projectIndex }) {
               {/* Content on Right */}
               <div className="flex flex-col justify-start p-6 sm:p-8 md:w-1/3">
                 <a
-                  href={`/projectDetail?project=${projectSlug}`}
+                  href={`/projectDetail?id=${projectId}`}
                   className="hover:underline transition-all"
                 >
                   <h3 className="mb-4 text-3xl text-left font-semibold text-[var(--olive-green)]">
@@ -40,7 +40,7 @@ export default function BigProjectSection({ project, projectIndex }) {
                   {project.description}
                 </p>
                 <a
-                  href={`/projectDetail?project=${projectSlug}`}
+                  href={`/projectDetail?id=${projectId}`}
                   className="text-[var(--olive-green)] text-left hover:underline font-semibold"
                 >
                   View Project →
