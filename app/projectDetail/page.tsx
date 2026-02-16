@@ -1,4 +1,4 @@
-"use client";
+export const dynamic = "force-dynamic";
 
 import { useSearchParams } from "next/navigation";
 import NavBar from "../../public/components/NavBar.jsx";
@@ -7,7 +7,7 @@ import ImageCarousel from "../../public/components/ImageCarousel.jsx";
 import StyledVideo from "../../public/components/StyledVideo.jsx";
 import projectsData from "../../projects.json";
 
-export const dynamic = "force-dynamic";
+"use client";
 
 export default function ProjectDetail() {
   const searchParams = useSearchParams();
