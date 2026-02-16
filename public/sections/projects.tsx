@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -87,7 +89,7 @@ export default function Projects() {
   const handleSelect = (index: number) => {
     if (isMobile) {
       const slug = slugify(projects[index]?.name || "");
-      router.push(`/projectDetail?${encodeURIComponent(slug)}`);
+      router.push(`/projectDetail?project=${encodeURIComponent(slug)}`);
       return;
     }
     setSelectedIndex(index);
@@ -229,7 +231,7 @@ export default function Projects() {
               </p>
 
               <Link
-                href={`/projectDetail?${encodeURIComponent(
+                href={`/projectDetail?project=${encodeURIComponent(
                   slugify(cardProjects[selectedIndex]?.name || ""),
                 )}`}
                 className="inline-flex items-center gap-2 bg-[var(--navy-green)] text-white px-5 py-3 text-sm hover:opacity-90 w-fit"

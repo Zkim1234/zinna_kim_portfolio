@@ -96,7 +96,9 @@ export default function ProjectCarousel({ projects }) {
                 {/* Content on Right */}
                 <div className="flex flex-col justify-start p-6 sm:p-8 md:w-7/12">
                   <a
-                    href={`/projectDetail?${encodeURIComponent(slugify(project.name))}`}
+                    href={`/projectDetail?project=${encodeURIComponent(
+                      slugify(project.name),
+                    )}`}
                   >
                     <h3 className="mb-4 text-3xl text-left font-semibold text-[var(--olive-green)]">
                       {project.name}
@@ -109,7 +111,9 @@ export default function ProjectCarousel({ projects }) {
                     {project.description}
                   </p>
                   <a
-                    href={`/projectDetail?${encodeURIComponent(slugify(project.name))}`}
+                    href={`/projectDetail?project=${encodeURIComponent(
+                      slugify(project.name),
+                    )}`}
                     className="text-[var(--olive-green)] text-left hover:underline font-semibold pointer-events-auto"
                     onClick={(e) => e.stopPropagation()}
                   >

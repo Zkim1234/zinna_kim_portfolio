@@ -1,3 +1,6 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
 import NavBar from "../../public/components/NavBar.jsx";
 import Footer from "../../public/components/Footer.jsx";
 import ImageCarousel from "../../public/components/ImageCarousel.jsx";
@@ -6,21 +9,10 @@ import projectsData from "../../projects.json";
 
 export const dynamic = "force-dynamic";
 
-type ProjectDetailPageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
-};
-
-const getParamValue = (value?: string | string[]) =>
-  Array.isArray(value) ? value[0] : value || "";
-
-export default function ProjectDetail({
-  searchParams,
-}: ProjectDetailPageProps) {
-  const projectId = getParamValue(searchParams?.id);
-  const queryKey = searchParams ? Object.keys(searchParams)[0] : "";
-  const rawSlug =
-    getParamValue(searchParams?.project) ||
-    (queryKey && queryKey !== "id" ? queryKey : "");
+export default function ProjectDetail() {
+  const searchParams = useSearchParams();
+  const projectId = searchParams.get("id") || "";
+  const rawSlug = searchParams.get("project") || "";
   const slug = rawSlug ? decodeURIComponent(rawSlug) : "";
 
   const slugify = (value: string) =>
@@ -30,10 +22,14 @@ export default function ProjectDetail({
       .replace(/\s+/g, "-")
       .replace(/[^a-z0-9-]/g, "");
 
-  const projectIndex = projectId ? parseInt(projectId) : -1;
-  const projectBySlugIndex = slug
+  const projectIndex = projectId ? parseInt(projectId, 10) : -1;
+  const normalizedSlug = slug ? slugify(slug) : "";
+  const projectBySlugIndex = normalizedSlug
     ? projectsData.projects.findIndex(
-        (item: { name: string }) => slugify(item.name) === slug,
+        (item: { name: string; title?: string }) =>
+          [item.name, item.title]
+            .filter(Boolean)
+            .some((value) => slugify(value as string) === normalizedSlug),
       )
     : -1;
 

@@ -26,7 +26,7 @@ export default function BigProjectSection({ project, projectIndex }) {
               {/* Content on Right */}
               <div className="flex flex-col justify-start p-6 sm:p-8 md:w-1/3">
                 <a
-                  href={`/projectDetail?${projectSlug}`}
+                  href={`/projectDetail?project=${projectSlug}`}
                   className="hover:underline transition-all"
                 >
                   <h3 className="mb-4 text-3xl text-left font-semibold text-[var(--olive-green)]">
@@ -40,7 +40,7 @@ export default function BigProjectSection({ project, projectIndex }) {
                   {project.description}
                 </p>
                 <a
-                  href={`/projectDetail?${projectSlug}`}
+                  href={`/projectDetail?project=${projectSlug}`}
                   className="text-[var(--olive-green)] text-left hover:underline font-semibold"
                 >
                   View Project →

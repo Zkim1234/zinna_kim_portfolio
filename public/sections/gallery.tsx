@@ -78,18 +78,15 @@ export default function Gallery() {
                       Creative Design
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
-                      Dynamic and engaging graphic designs that effectively
-                      communicate Sephora's brand message through visually
-                      appealing layouts and creative elements.
+                      While maintaining brand consistency, I carefully adhered to Sephora’s visual identity and brand guidelines to ensure a cohesive look and feel that resonates with its target audience. Since Sephora primarily produces live action advertisements with minimal graphic driven campaigns, I saw an opportunity to explore a fully illustrated and animated approach. This project reimagines how Sephora could expand its visual storytelling through motion graphics while staying true to the brand’s essence.
                     </p>
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-[var(--olive-green)] dark:text-[var(--olive-green)] mb-2">
-                      Keeping Brand Consistency
+                      Storytelling
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
-                      Adhered to Sephora's brand guidelines to ensure a cohesive
-                      look and feel that resonates with their target audience.
+                      This advertisement is designed to introduce Sephora to audiences who may not yet be familiar with the brand. I focused on highlighting Sephora’s strengths, including its product variety, inclusivity, and beauty expertise, while maintaining strong brand alignment. Additionally, the ad emphasizes Sephora’s online services, which are less prominently featured in official campaigns, showcasing the convenience of accessing Sephora from home and encouraging broader audience engagement.
                     </p>
                   </div>
                 </div>
@@ -126,12 +123,10 @@ export default function Gallery() {
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-lg font-semibold text-[var(--olive-green)] dark:text-[var(--olive-green)] mb-2">
-                      Brand Identity and Visual Appeal
+                      Concept and Visual Ideation
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
-                      Dynamic and engaging graphic designs that effectively
-                      communicate Gong Cha's brand message through visually
-                      appealing layouts and creative elements.
+                      Having previously worked as a bobarista at Gong Cha, I noticed that many customers were curious about how pearl milk tea is made. A common question I received was whether we used real brewed tea, which revealed an opportunity to educate customers while strengthening brand transparency. Inspired by this experience, I developed an advertisement concept that highlights the craftsmanship behind pearl milk tea while featuring some of the brand’s most popular menu items. The goal was to both inform and engage viewers, turning everyday curiosity into a compelling visual story.
                     </p>
                   </div>
                   <div>
@@ -139,8 +134,7 @@ export default function Gallery() {
                       Filming
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
-                      Adhered to Sephora's brand guidelines to ensure a cohesive
-                      look and feel that resonates with their target audience.
+                      This advertisement was filmed on location at the store where I worked, with approval from the store owner. I utilized downtime efficiently to capture authentic footage of the drink-making process. The final piece blends graphic elements with real-life footage, creating a dynamic transition between informative visuals and behind-the-scenes moments. This approach enhances viewer engagement, builds trust through transparency, and provides a clearer understanding of how each drink is carefully prepared.
                     </p>
                   </div>
                 </div>
