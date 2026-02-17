@@ -1,6 +1,3 @@
-"use client";
-
-import { useSearchParams } from "next/navigation";
 import NavBar from "../../public/components/NavBar.jsx";
 import Footer from "../../public/components/Footer.jsx";
 import ImageCarousel from "../../public/components/ImageCarousel.jsx";
@@ -22,10 +19,18 @@ const normalizeKey = (value: string) =>
 
 export const dynamic = "force-dynamic";
 
-export default function ProjectDetailPage() {
-  const searchParams = useSearchParams();
-  const projectId = searchParams.get("id") || "";
-  const rawSlug = searchParams.get("project") || "";
+type ProjectDetailPageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
+
+const getParamValue = (value?: string | string[]) =>
+  Array.isArray(value) ? value[0] : value || "";
+
+export default function ProjectDetailPage({
+  searchParams,
+}: ProjectDetailPageProps) {
+  const projectId = getParamValue(searchParams?.id);
+  const rawSlug = getParamValue(searchParams?.project);
   const slug = rawSlug ? decodeURIComponent(rawSlug) : "";
 
   const projectIndex = projectId ? parseInt(projectId, 10) : -1;
