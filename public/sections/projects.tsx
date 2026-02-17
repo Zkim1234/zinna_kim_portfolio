@@ -230,15 +230,25 @@ export default function Projects() {
                   "More details will be added."}
               </p>
 
-              <Link
-                href={`/projectDetail?id=${encodeURIComponent(
-                  String(selectedIndex),
-                )}`}
-                className="inline-flex items-center gap-2 bg-[var(--navy-green)] text-white px-5 py-3 text-sm hover:opacity-90 w-fit"
-              >
-                About Project
-                <span aria-hidden>→</span>
-              </Link>
+              <div className="flex flex-col gap-3">
+                <Link
+                  href={`/projectDetail?id=${encodeURIComponent(
+                    String(selectedIndex),
+                  )}`}
+                  className="inline-flex items-center gap-2 bg-[var(--navy-green)] text-white px-5 py-3 text-sm hover:opacity-90 w-fit"
+                >
+                  About Project
+                  <span aria-hidden>→</span>
+                </Link>
+                {selectedProject?.name === "Solace" && (
+                  <Link
+                    href="/caseStudy"
+                    className="inline-flex items-center gap-2 bg-white text-[var(--olive-green)] border border-[var(--olive-green)] px-5 py-3 text-sm hover:bg-[var(--olive-green)] hover:text-white transition-colors w-fit"
+                  >
+                    View Case Study
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         )}
