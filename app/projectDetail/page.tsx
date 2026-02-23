@@ -1,3 +1,5 @@
+"use client";
+
 import NavBar from "../../public/components/NavBar.jsx";
 import Footer from "../../public/components/Footer.jsx";
 import ImageCarousel from "../../public/components/ImageCarousel.jsx";
