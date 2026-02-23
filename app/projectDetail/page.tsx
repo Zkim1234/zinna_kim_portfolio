@@ -1,5 +1,6 @@
 "use client";
 
+import { use } from "react";
 import NavBar from "../../public/components/NavBar.jsx";
 import Footer from "../../public/components/Footer.jsx";
 import ImageCarousel from "../../public/components/ImageCarousel.jsx";
@@ -22,7 +23,7 @@ const normalizeKey = (value: string) =>
 export const dynamic = "force-dynamic";
 
 type ProjectDetailPageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
 
 const getParamValue = (value?: string | string[]) =>
@@ -31,8 +32,9 @@ const getParamValue = (value?: string | string[]) =>
 export default function ProjectDetailPage({
   searchParams,
 }: ProjectDetailPageProps) {
-  const projectId = getParamValue(searchParams?.id);
-  const rawSlug = getParamValue(searchParams?.project);
+  const params = use(searchParams || Promise.resolve({}));
+  const projectId = getParamValue(params?.id);
+  const rawSlug = getParamValue(params?.project);
   const slug = rawSlug ? decodeURIComponent(rawSlug) : "";
 
   const projectIndex = projectId ? parseInt(projectId, 10) : -1;

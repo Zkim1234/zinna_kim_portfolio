@@ -3,7 +3,7 @@
     {
       "name": "Solace",
       "title": "UI/UX Wasn’t Enough, So I Learned Full-Stacks",
-      "role":[
+      "role": [
         "#Full-stack-Developer",
         "#Social-Media-Manager",
         "#Camera-Operator"
@@ -49,12 +49,12 @@
       "overviewVideoThumbnail": "video_thumbnails/solace_ad_thumbnail.png",
       "myWorkTitle": "My Contributions",
       "myWork": [
-       "Designed and developed stress-relief features, including breathing exercises and white-noise pages",
-      "Implemented login/sign-up flows, onboarding tutorials, and account settings pages",
-      "Applied new learnings and AI tools throughout the development process",
-      "Used AI tools such as Copilot and Cursor to accelerate and support development",
-      "Produced the promotional video from storyboarding to filming and post-production",
-      "Managed the project’s social media to promote Solace and communicate its mission"
+        "Designed and developed stress-relief features, including breathing exercises and white-noise pages",
+        "Implemented login/sign-up flows, onboarding tutorials, and account settings pages",
+        "Applied new learnings and AI tools throughout the development process",
+        "Used AI tools such as Copilot and Cursor to accelerate and support development",
+        "Produced the promotional video from storyboarding to filming and post-production",
+        "Managed the project’s social media to promote Solace and communicate its mission"
       ],
       "myWorkImages": [
         "../assets/Solace/solace_screens01.png",
@@ -80,15 +80,15 @@
       "projectOverview": "I developed and designed key website features and a transparent WordPress booking flow, improving clarity, reducing user confusion, and delivering a smooth, intuitive experience for all users.",
       "overviewVideo": "WhatSUP_ad.mp4",
       "overviewVideoThumbnail": "video_thumbnails/whatSUP_ad_thumbnail.png",
-        "myWorkTitle": "My Contributions",
-        "myWork": [
-          "Led the design and development of the booking process and waiver forms using WordPress",
-          "Designed clear page layouts and user-friendly booking flows",
-          "Implemented a progress bar to show booking steps and user status",
-          "Ensured transparent pricing with no hidden fees to reduce price confusion",
-          "Organized instructions to be clear, simple, and easy to read",
-          "Focused on minimizing user confusion and delivering a smooth, intuitive user experience"
-        ],
+      "myWorkTitle": "My Contributions",
+      "myWork": [
+        "Led the design and development of the booking process and waiver forms using WordPress",
+        "Designed clear page layouts and user-friendly booking flows",
+        "Implemented a progress bar to show booking steps and user status",
+        "Ensured transparent pricing with no hidden fees to reduce price confusion",
+        "Organized instructions to be clear, simple, and easy to read",
+        "Focused on minimizing user confusion and delivering a smooth, intuitive user experience"
+      ],
       "myWorkImages": [
         "../assets/WhatSUP/whatSUP_product_details.png",
         "../assets/WhatSUP/whatSUP_payment.png",
