@@ -32,7 +32,10 @@ const getParamValue = (value?: string | string[]) =>
 export default function ProjectDetailPage({
   searchParams,
 }: ProjectDetailPageProps) {
-  const params = use(searchParams || Promise.resolve({}));
+  const params = use(
+    searchParams ||
+      Promise.resolve({} as Record<string, string | string[] | undefined>),
+  );
   const projectId = getParamValue(params?.id);
   const rawSlug = getParamValue(params?.project);
   const slug = rawSlug ? decodeURIComponent(rawSlug) : "";
