@@ -1,22 +1,7 @@
 import React from "react";
-import GalleryCarousel from "../components/GalleryCarousel.jsx";
 import StyledVideo from "../components/StyledVideo.jsx";
 
 export default function Gallery() {
-  const images = [
-    "gallery/magazine/travel_magazine_design.png",
-    "gallery/magazine/travel_magazine_design2.png",
-    "gallery/magazine/travel_magazine_design3.png",
-    "gallery/magazine/travel_magazine_design4.png",
-    "gallery/magazine/travel_magazine_design5.png",
-    "gallery/magazine/travel_magazine_design6.png",
-    "gallery/magazine/travel_magazine_design7.png",
-    "gallery/magazine/travel_magazine_design8.png",
-    "gallery/magazine/travel_magazine_design9.png",
-    "gallery/magazine/travel_magazine_design10.png",
-    "gallery/magazine/travel_magazine_design11.png",
-    "gallery/magazine/travel_magazine_design12.png",
-  ];
   return (
     <div className="flex flex-col bg-zinc-50 font-sans dark:bg-black">
       <main className="w-full flex-1 px-6 sm:px-10 lg:px-20 py-16 sm:py-20">
@@ -24,11 +9,15 @@ export default function Gallery() {
           My Design Gallery
         </h2>
 
-        {/* First Section: Carousel with Text */}
+        {/* First Section: Embedded Adobe InDesign with Text */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 w-full max-w-6xl mx-auto mb-16 sm:mb-20">
-          {/* Left: Carousel */}
-          <div className="w-full lg:w-1/2 overflow-hidden">
-            <GalleryCarousel images={images} />
+          {/* Left: Adobe InDesign Embed */}
+          <div className="w-full">
+            <iframe
+              src="https://indd.adobe.com/view/23d2d988-985b-4735-8358-97cb5fc77688"
+              allowFullScreen
+              className="w-full h-96 sm:h-[500px] lg:h-[600px] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+            ></iframe>
           </div>
           {/* Right: Text Box */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center">
@@ -78,7 +67,15 @@ export default function Gallery() {
                       Creative Design
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
-                      While maintaining brand consistency, I carefully adhered to Sephora’s visual identity and brand guidelines to ensure a cohesive look and feel that resonates with its target audience. Since Sephora primarily produces live action advertisements with minimal graphic driven campaigns, I saw an opportunity to explore a fully illustrated and animated approach. This project reimagines how Sephora could expand its visual storytelling through motion graphics while staying true to the brand’s essence.
+                      While maintaining brand consistency, I carefully adhered
+                      to Sephora’s visual identity and brand guidelines to
+                      ensure a cohesive look and feel that resonates with its
+                      target audience. Since Sephora primarily produces live
+                      action advertisements with minimal graphic driven
+                      campaigns, I saw an opportunity to explore a fully
+                      illustrated and animated approach. This project reimagines
+                      how Sephora could expand its visual storytelling through
+                      motion graphics while staying true to the brand’s essence.
                     </p>
                   </div>
                   <div>
@@ -86,7 +83,15 @@ export default function Gallery() {
                       Storytelling
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
-                      This advertisement is designed to introduce Sephora to audiences who may not yet be familiar with the brand. I focused on highlighting Sephora’s strengths, including its product variety, inclusivity, and beauty expertise, while maintaining strong brand alignment. Additionally, the ad emphasizes Sephora’s online services, which are less prominently featured in official campaigns, showcasing the convenience of accessing Sephora from home and encouraging broader audience engagement.
+                      This advertisement is designed to introduce Sephora to
+                      audiences who may not yet be familiar with the brand. I
+                      focused on highlighting Sephora’s strengths, including its
+                      product variety, inclusivity, and beauty expertise, while
+                      maintaining strong brand alignment. Additionally, the ad
+                      emphasizes Sephora’s online services, which are less
+                      prominently featured in official campaigns, showcasing the
+                      convenience of accessing Sephora from home and encouraging
+                      broader audience engagement.
                     </p>
                   </div>
                 </div>
@@ -126,7 +131,17 @@ export default function Gallery() {
                       Concept and Visual Ideation
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
-                      Having previously worked as a bobarista at Gong Cha, I noticed that many customers were curious about how pearl milk tea is made. A common question I received was whether we used real brewed tea, which revealed an opportunity to educate customers while strengthening brand transparency. Inspired by this experience, I developed an advertisement concept that highlights the craftsmanship behind pearl milk tea while featuring some of the brand’s most popular menu items. The goal was to both inform and engage viewers, turning everyday curiosity into a compelling visual story.
+                      Having previously worked as a bobarista at Gong Cha, I
+                      noticed that many customers were curious about how pearl
+                      milk tea is made. A common question I received was whether
+                      we used real brewed tea, which revealed an opportunity to
+                      educate customers while strengthening brand transparency.
+                      Inspired by this experience, I developed an advertisement
+                      concept that highlights the craftsmanship behind pearl
+                      milk tea while featuring some of the brand’s most popular
+                      menu items. The goal was to both inform and engage
+                      viewers, turning everyday curiosity into a compelling
+                      visual story.
                     </p>
                   </div>
                   <div>
@@ -134,7 +149,16 @@ export default function Gallery() {
                       Filming
                     </h4>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">
-                      This advertisement was filmed on location at the store where I worked, with approval from the store owner. I utilized downtime efficiently to capture authentic footage of the drink-making process. The final piece blends graphic elements with real-life footage, creating a dynamic transition between informative visuals and behind-the-scenes moments. This approach enhances viewer engagement, builds trust through transparency, and provides a clearer understanding of how each drink is carefully prepared.
+                      This advertisement was filmed on location at the store
+                      where I worked, with approval from the store owner. I
+                      utilized downtime efficiently to capture authentic footage
+                      of the drink-making process. The final piece blends
+                      graphic elements with real-life footage, creating a
+                      dynamic transition between informative visuals and
+                      behind-the-scenes moments. This approach enhances viewer
+                      engagement, builds trust through transparency, and
+                      provides a clearer understanding of how each drink is
+                      carefully prepared.
                     </p>
                   </div>
                 </div>
