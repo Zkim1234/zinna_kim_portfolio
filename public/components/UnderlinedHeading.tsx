@@ -1,10 +1,11 @@
-export default function UnderlinedHeading({ text }) {
+interface UnderlinedHeadingProps {
+  text: string;
+}
+
+export default function UnderlinedHeading({ text }: UnderlinedHeadingProps) {
   return (
     <div className="flex flex-col">
-      <h3
-        className="text-lg"
-        style={{ color: "var(--dark-green)" }}
-      >
+      <h3 className="text-lg" style={{ color: "var(--dark-green)" }}>
         {text}
       </h3>
       <div

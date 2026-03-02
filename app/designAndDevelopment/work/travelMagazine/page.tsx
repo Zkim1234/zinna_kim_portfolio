@@ -35,7 +35,7 @@ export default function TravelMagazine() {
             scrub: 1,
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     });
 
@@ -59,17 +59,31 @@ export default function TravelMagazine() {
           "Typography",
         ]}
       />
-      
+
       <main className="w-full px-6 sm:px-10 lg:px-20 py-16 sm:py-20">
         <div className="w-full max-w-6xl mx-auto space-y-24">
           {/* Row 1 - Overview */}
           <div
-            ref={(el) => (rowRefs.current[0] = el)}
+            ref={(el) => {
+              rowRefs.current[0] = el;
+            }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
             <div>
-              <h2 style={{ color: "var(--olive-green)" }} className="font-semibold text-xl mb-4">Overview</h2>
-              <p className="text-gray-700 dark:text-gray-300">Referenced from G-adventure, this travel magazine design project showcases a modern and visually appealing layout that highlights various travel destinations, cultural experiences, and adventure activities. The design incorporates vibrant imagery, and clean typography to create an engaging reading experience for travel enthusiasts.</p>
+              <h2
+                style={{ color: "var(--olive-green)" }}
+                className="font-semibold text-xl mb-4"
+              >
+                Overview
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300">
+                Referenced from G-adventure, this travel magazine design project
+                showcases a modern and visually appealing layout that highlights
+                various travel destinations, cultural experiences, and adventure
+                activities. The design incorporates vibrant imagery, and clean
+                typography to create an engaging reading experience for travel
+                enthusiasts.
+              </p>
             </div>
             <div>
               <iframe
@@ -82,35 +96,61 @@ export default function TravelMagazine() {
 
           {/* Row 2 - Cover Page */}
           <div
-            ref={(el) => (rowRefs.current[1] = el)}
+            ref={(el) => {
+              rowRefs.current[1] = el;
+            }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
             <div>
-              <img src="" alt="Cover Page" className="w-full rounded-lg shadow-lg" />
+              <img
+                src=""
+                alt="Cover Page"
+                className="w-full rounded-lg shadow-lg"
+              />
             </div>
             <div>
               <UnderlinedHeading text="Cover Page" />
-              <p className="text-gray-700 dark:text-gray-300 mt-4">For the cover pages, I tried to mix modern and traditional styles because the tour package includes both traditional building tours and K-pop tours. I wanted the design to reflect that contrast, showing both the cultural side and the modern pop culture experience in one visual.</p>
+              <p className="text-gray-700 dark:text-gray-300 mt-4">
+                For the cover pages, I tried to mix modern and traditional
+                styles because the tour package includes both traditional
+                building tours and K-pop tours. I wanted the design to reflect
+                that contrast, showing both the cultural side and the modern pop
+                culture experience in one visual.
+              </p>
             </div>
           </div>
 
           {/* Row 3 - Happy People */}
           <div
-            ref={(el) => (rowRefs.current[2] = el)}
+            ref={(el) => {
+              rowRefs.current[2] = el;
+            }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
             <div>
               <UnderlinedHeading text="Happy People" />
-              <p className="text-gray-700 dark:text-gray-300 mt-4">I used images of excited people to create a joyful overall mood. I wanted viewers to immediately feel the fun, energy, and excitement of the tour. By showing genuine expressions and lively moments, it helps people imagine themselves being part of the experience.</p>
+              <p className="text-gray-700 dark:text-gray-300 mt-4">
+                I used images of excited people to create a joyful overall mood.
+                I wanted viewers to immediately feel the fun, energy, and
+                excitement of the tour. By showing genuine expressions and
+                lively moments, it helps people imagine themselves being part of
+                the experience.
+              </p>
             </div>
             <div>
-              <img src="" alt="Happy People" className="w-full rounded-lg shadow-lg" />
+              <img
+                src=""
+                alt="Happy People"
+                className="w-full rounded-lg shadow-lg"
+              />
             </div>
           </div>
 
           {/* Row 4 - Map */}
           <div
-            ref={(el) => (rowRefs.current[3] = el)}
+            ref={(el) => {
+              rowRefs.current[3] = el;
+            }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
             <div>
@@ -118,26 +158,44 @@ export default function TravelMagazine() {
             </div>
             <div>
               <UnderlinedHeading text="Map" />
-              <p className="text-gray-700 dark:text-gray-300 mt-4">To help visualize the locations we'll be visiting, especially for people who have never traveled to South Korea before, I added illustrations to show each destination. This makes it easier for viewers to understand where the tour takes place and gives them a clearer picture of what to expect.</p>
+              <p className="text-gray-700 dark:text-gray-300 mt-4">
+                To help visualize the locations we'll be visiting, especially
+                for people who have never traveled to South Korea before, I
+                added illustrations to show each destination. This makes it
+                easier for viewers to understand where the tour takes place and
+                gives them a clearer picture of what to expect.
+              </p>
             </div>
           </div>
 
           {/* Row 5 - Local Specialty */}
           <div
-            ref={(el) => (rowRefs.current[4] = el)}
+            ref={(el) => {
+              rowRefs.current[4] = el;
+            }}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
           >
             <div>
               <UnderlinedHeading text="Local Specialty" />
-              <p className="text-gray-700 dark:text-gray-300 mt-4">I also highlighted some of the best local foods from each region, such as samgyeopsal from Seoul, bibimbap from Jeonju, tteokbokki from Busan, and hallabong (orange) from Jeju. This helps showcase the unique food culture of each city and makes the tour feel more authentic and complete.</p>
+              <p className="text-gray-700 dark:text-gray-300 mt-4">
+                I also highlighted some of the best local foods from each
+                region, such as samgyeopsal from Seoul, bibimbap from Jeonju,
+                tteokbokki from Busan, and hallabong (orange) from Jeju. This
+                helps showcase the unique food culture of each city and makes
+                the tour feel more authentic and complete.
+              </p>
             </div>
             <div>
-              <img src="" alt="Local Specialty" className="w-full rounded-lg shadow-lg" />
+              <img
+                src=""
+                alt="Local Specialty"
+                className="w-full rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

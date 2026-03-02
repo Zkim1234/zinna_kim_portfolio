@@ -255,13 +255,28 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div id="projects-section" ref={(el) => (sectionRefs.current[0] = el)}>
+      <div
+        id="projects-section"
+        ref={(el) => {
+          sectionRefs.current[0] = el;
+        }}
+      >
         <Projects />
       </div>
-      <div id="gallery-section" ref={(el) => (sectionRefs.current[1] = el)}>
+      <div
+        id="gallery-section"
+        ref={(el) => {
+          sectionRefs.current[1] = el;
+        }}
+      >
         <Gallery />
       </div>
-      <div id="skills-section" ref={(el) => (sectionRefs.current[2] = el)}>
+      <div
+        id="skills-section"
+        ref={(el) => {
+          sectionRefs.current[2] = el;
+        }}
+      >
         <MySkills />
       </div>
       <Footer />
