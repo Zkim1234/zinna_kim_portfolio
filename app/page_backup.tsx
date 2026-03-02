@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect } from "react";
 import NavBar from "../public/components/NavBar.jsx";
 import VariableProximityText from "../public/components/VariableProximityText.jsx";
 import "./globals.css";
@@ -13,48 +11,11 @@ import Projects from "../public/sections/projects";
 import FloatingContactButton from "../public/components/FloatingContactButton";
 
 export default function Home() {
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("projects-section");
     projectsSection?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // ScrollTrigger animations for vertical stacking effect
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    sectionRefs.current.forEach((section, index) => {
-      if (section) {
-        gsap.fromTo(
-          section,
-          {
-            y: 100,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 80%",
-              end: "top 20%",
-              scrub: 1,
-              toggleActions: "play none none reverse",
-            },
-          },
-        );
-      }
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       // Ignore if user is typing in an input field
@@ -255,13 +216,13 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div id="projects-section" ref={(el) => (sectionRefs.current[0] = el)}>
+      <div id="projects-section">
         <Projects />
       </div>
-      <div id="gallery-section" ref={(el) => (sectionRefs.current[1] = el)}>
+      <div id="gallery-section">
         <Gallery />
       </div>
-      <div id="skills-section" ref={(el) => (sectionRefs.current[2] = el)}>
+      <div id="skills-section">
         <MySkills />
       </div>
       <Footer />

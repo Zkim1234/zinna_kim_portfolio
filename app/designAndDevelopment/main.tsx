@@ -12,6 +12,7 @@ type Item = {
   title: string;
   summary: string;
   category: Exclude<Filter, "all">;
+  href?: string;
 };
 
 const ITEMS: Item[] = [
@@ -21,6 +22,7 @@ const ITEMS: Item[] = [
     summary:
       "A journey from design to full-stack development and why both skills matter.",
     category: "projects",
+    href: "/designAndDevelopment/work/solace",
   },
   {
     id: "proj-02",
@@ -28,6 +30,7 @@ const ITEMS: Item[] = [
     summary:
       "From design mockups to live website implementation using WordPress.",
     category: "projects",
+    href: "/designAndDevelopment/work/whatSUP",
   },
   {
     id: "proj-03",
@@ -35,6 +38,7 @@ const ITEMS: Item[] = [
     summary:
       "Inspired by G-Adventures, this travel magazine design features a modern, visually engaging layout with vibrant imagery and clean typography that highlights global destinations, cultural experiences, and adventure activities.",
     category: "design work",
+    href: "/designAndDevelopment/work/travelMagazine",
   },
   {
     id: "proj-04",
@@ -42,18 +46,23 @@ const ITEMS: Item[] = [
     summary:
       "This promotional video for Gong Cha showcases its best-selling drinks and the fresh pearl milk tea–making process while maintaining the brand’s clean, vibrant, and youthful image to highlight the quality and care behind each beverage.",
     category: "design work",
+    href: "/designAndDevelopment/work/gongCha",
   },
   {
     id: "proj-05",
     title: "Vape? No, Sephora Ad",
-    summary: "This graphic-based promotional video concept for Sephora explores a design-driven approach that highlights the brand’s strong identity, showcases its diverse range of beauty products, and emphasizes its seamless in-store and online shopping experience.",
+    summary:
+      "This graphic-based promotional video concept for Sephora explores a design-driven approach that highlights the brand’s strong identity, showcases its diverse range of beauty products, and emphasizes its seamless in-store and online shopping experience.",
     category: "design work",
+    href: "/designAndDevelopment/work/sephora",
   },
   {
     id: "proj-06",
     title: "Iron Workers Recovery App Case Study",
-    summary: "A case study exploring the design and development of a recovery support application.",
+    summary:
+      "A case study exploring the design and development of a recovery support application.",
     category: "case study",
+    href: "/designAndDevelopment/work/solaceCaseStudy",
   },
 ];
 
@@ -142,37 +151,69 @@ export default function DesignAndDevelopment() {
         <section className="mt-10">
           {viewMode === "list" ? (
             <div className="space-y-5">
-              {filteredItems.map((item) => (
-                <article
-                  key={item.id}
-                  className="flex flex-col gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center"
-                >
-                  <div className="h-24 w-full rounded-1xl bg-gray-300 sm:h-20 sm:w-28" />
-                  <div className="flex-1">
-                    <span className="inline-block text-xs capitalize mb-2" style={{ color: "var(--olive-green)" }}>{item.category}</span>
-                    <h4 className="text-base font-semibold text-gray-900">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-gray-600 mt-1">{item.summary}</p>
-                  </div>
-                </article>
-              ))}
+              {filteredItems.map((item) => {
+                const content = (
+                  <article className="flex flex-col gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center">
+                    <div className="h-24 w-full rounded-1xl bg-gray-300 sm:h-20 sm:w-28" />
+                    <div className="flex-1">
+                      <span
+                        className="inline-block text-xs capitalize mb-2"
+                        style={{ color: "var(--olive-green)" }}
+                      >
+                        {item.category}
+                      </span>
+                      <h4 className="text-base font-semibold text-gray-900">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-gray-600 mt-1">
+                        {item.summary}
+                      </p>
+                    </div>
+                  </article>
+                );
+                return item.href ? (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    className="block hover:opacity-80 transition-opacity"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={item.id}>{content}</div>
+                );
+              })}
             </div>
           ) : (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredItems.map((item) => (
-                <article
-                  key={item.id}
-                  className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm"
-                >
-                  <div className="aspect-[4/3] w-full rounded-1xl bg-gray-300" />
-                  <span className="inline-block text-xs capitalize mt-3 mb-1" style={{ color: "var(--olive-green)" }}>{item.category}</span>
-                  <h4 className="font-semibold text-gray-900">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs text-gray-600 mt-2">{item.summary}</p>
-                </article>
-              ))}
+              {filteredItems.map((item) => {
+                const content = (
+                  <article className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                    <div className="aspect-[4/3] w-full rounded-1xl bg-gray-300" />
+                    <span
+                      className="inline-block text-xs capitalize mt-3 mb-1"
+                      style={{ color: "var(--olive-green)" }}
+                    >
+                      {item.category}
+                    </span>
+                    <h4 className="font-semibold text-gray-900">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-gray-600 mt-2">{item.summary}</p>
+                  </article>
+                );
+                return item.href ? (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    className="block hover:opacity-80 transition-opacity"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={item.id}>{content}</div>
+                );
+              })}
             </div>
           )}
         </section>
