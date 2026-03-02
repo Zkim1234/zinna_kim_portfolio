@@ -12,31 +12,53 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function TravelMagazine() {
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    rowRefs.current.forEach((row, index) => {
+    rowRefs.current.forEach((row) => {
       if (!row) return;
 
       gsap.fromTo(
         row,
         {
-          x: index % 2 === 0 ? -100 : 100,
+          y: 80,
           opacity: 0,
         },
         {
-          x: 0,
+          y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 0.9,
           ease: "power2.out",
           scrollTrigger: {
             trigger: row,
-            start: "top 80%",
-            end: "top 20%",
+            start: "top 85%",
+            end: "top 55%",
             scrub: 1,
             toggleActions: "play none none reverse",
           },
         },
       );
+    });
+
+    imageRefs.current.forEach((image) => {
+      if (!image) return;
+
+      const imageTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: image,
+          start: "top 85%",
+          end: "bottom 10%",
+          scrub: 1,
+        },
+      });
+
+      imageTimeline
+        .fromTo(
+          image,
+          { y: 90, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "none" },
+        )
+        .to(image, { y: -80, opacity: 0.6, duration: 1.5, ease: "none" });
     });
 
     return () => {
@@ -67,7 +89,7 @@ export default function TravelMagazine() {
             ref={(el) => {
               rowRefs.current[0] = el;
             }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center min-h-[60vh] py-2"
           >
             <div>
               <h2
@@ -99,16 +121,27 @@ export default function TravelMagazine() {
             ref={(el) => {
               rowRefs.current[1] = el;
             }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-12 items-start min-h-[90vh] py-8"
           >
-            <div>
+            <div className="space-y-6">
               <img
-                src=""
+                src="../../../assets/travel_magazine/front_cover_page.png"
                 alt="Cover Page"
-                className="w-full rounded-lg shadow-lg"
+                ref={(el) => {
+                  imageRefs.current[0] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
+              <img
+                src="../../../assets/travel_magazine/back_cover_page.png"
+                alt="Cover Page"
+                ref={(el) => {
+                  imageRefs.current[1] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
               />
             </div>
-            <div>
+            <div className="lg:sticky lg:top-28 self-start lg:max-w-sm">
               <UnderlinedHeading text="Cover Page" />
               <p className="text-gray-700 dark:text-gray-300 mt-4">
                 For the cover pages, I tried to mix modern and traditional
@@ -125,9 +158,9 @@ export default function TravelMagazine() {
             ref={(el) => {
               rowRefs.current[2] = el;
             }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-12 items-start min-h-[90vh] py-8"
           >
-            <div>
+            <div className="lg:sticky lg:top-28 self-start lg:max-w-sm lg:order-2">
               <UnderlinedHeading text="Happy People" />
               <p className="text-gray-700 dark:text-gray-300 mt-4">
                 I used images of excited people to create a joyful overall mood.
@@ -137,11 +170,30 @@ export default function TravelMagazine() {
                 the experience.
               </p>
             </div>
-            <div>
+            <div className="space-y-6 lg:order-1">
               <img
-                src=""
+                src="../../../assets/travel_magazine/happy_people(1).png"
                 alt="Happy People"
-                className="w-full rounded-lg shadow-lg"
+                ref={(el) => {
+                  imageRefs.current[2] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
+              <img
+                src="../../../assets/travel_magazine/happy_people(2).png"
+                alt="Happy People"
+                ref={(el) => {
+                  imageRefs.current[3] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
+              <img
+                src="../../../assets/travel_magazine/happy_people(3).png"
+                alt="Happy People"
+                ref={(el) => {
+                  imageRefs.current[4] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
               />
             </div>
           </div>
@@ -151,12 +203,27 @@ export default function TravelMagazine() {
             ref={(el) => {
               rowRefs.current[3] = el;
             }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-12 items-start min-h-[90vh] py-8"
           >
-            <div>
-              <img src="" alt="Map" className="w-full rounded-lg shadow-lg" />
+            <div className="space-y-6">
+              <img
+                src="../../../assets/travel_magazine/map(1).png"
+                alt="Map"
+                ref={(el) => {
+                  imageRefs.current[5] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
+              <img
+                src="../../../assets/travel_magazine/map(2).png"
+                alt="Map"
+                ref={(el) => {
+                  imageRefs.current[6] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
             </div>
-            <div>
+            <div className="lg:sticky lg:top-28 self-start lg:max-w-sm">
               <UnderlinedHeading text="Map" />
               <p className="text-gray-700 dark:text-gray-300 mt-4">
                 To help visualize the locations we'll be visiting, especially
@@ -173,9 +240,9 @@ export default function TravelMagazine() {
             ref={(el) => {
               rowRefs.current[4] = el;
             }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-12 items-start min-h-[90vh] py-8 mb-24"
           >
-            <div>
+            <div className="lg:sticky lg:top-28 self-start lg:max-w-sm lg:order-2">
               <UnderlinedHeading text="Local Specialty" />
               <p className="text-gray-700 dark:text-gray-300 mt-4">
                 I also highlighted some of the best local foods from each
@@ -185,11 +252,38 @@ export default function TravelMagazine() {
                 the tour feel more authentic and complete.
               </p>
             </div>
-            <div>
+            <div className="space-y-6 lg:order-1">
               <img
-                src=""
+                src="../../../assets/travel_magazine/local_specialty(1).png"
                 alt="Local Specialty"
-                className="w-full rounded-lg shadow-lg"
+                ref={(el) => {
+                  imageRefs.current[7] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
+              <img
+                src="../../../assets/travel_magazine/local_specialty(2).png"
+                alt="Local Specialty"
+                ref={(el) => {
+                  imageRefs.current[8] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
+              <img
+                src="../../../assets/travel_magazine/local_specialty(3).png"
+                alt="Local Specialty"
+                ref={(el) => {
+                  imageRefs.current[9] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+              />
+              <img
+                src="../../../assets/travel_magazine/local_specialty(4).png"
+                alt="Local Specialty"
+                ref={(el) => {
+                  imageRefs.current[10] = el;
+                }}
+                className="w-full max-w-md mx-auto rounded-lg shadow-lg"
               />
             </div>
           </div>

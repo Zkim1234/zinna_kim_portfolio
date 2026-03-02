@@ -13,6 +13,7 @@ type Item = {
   summary: string;
   category: Exclude<Filter, "all">;
   href?: string;
+  img?: string;
 };
 
 const ITEMS: Item[] = [
@@ -23,6 +24,7 @@ const ITEMS: Item[] = [
       "A journey from design to full-stack development and why both skills matter.",
     category: "projects",
     href: "/designAndDevelopment/work/solace",
+    img: "/assets/Solace/solace_thumbnail.png",
   },
   {
     id: "proj-02",
@@ -31,6 +33,7 @@ const ITEMS: Item[] = [
       "From design mockups to live website implementation using WordPress.",
     category: "projects",
     href: "/designAndDevelopment/work/whatSUP",
+    img: "/assets/whatSUP/whatSUP_thumbnail.png",
   },
   {
     id: "proj-03",
@@ -39,6 +42,7 @@ const ITEMS: Item[] = [
       "Inspired by G-Adventures, this travel magazine design features a modern, visually engaging layout with vibrant imagery and clean typography that highlights global destinations, cultural experiences, and adventure activities.",
     category: "design work",
     href: "/designAndDevelopment/work/travelMagazine",
+    img: "/assets/travel_magazine/g_advanture_logo.png",
   },
   {
     id: "proj-04",
@@ -47,6 +51,7 @@ const ITEMS: Item[] = [
       "This promotional video for Gong Cha showcases its best-selling drinks and the fresh pearl milk tea–making process while maintaining the brand’s clean, vibrant, and youthful image to highlight the quality and care behind each beverage.",
     category: "design work",
     href: "/designAndDevelopment/work/gongCha",
+    img: "/assets/gongCha/logo.png",
   },
   {
     id: "proj-05",
@@ -55,6 +60,7 @@ const ITEMS: Item[] = [
       "This graphic-based promotional video concept for Sephora explores a design-driven approach that highlights the brand’s strong identity, showcases its diverse range of beauty products, and emphasizes its seamless in-store and online shopping experience.",
     category: "design work",
     href: "/designAndDevelopment/work/sephora",
+    img: "/assets/sephora/logo.png",
   },
   {
     id: "proj-06",
@@ -63,6 +69,7 @@ const ITEMS: Item[] = [
       "A case study exploring the design and development of a recovery support application.",
     category: "case study",
     href: "/designAndDevelopment/work/solaceCaseStudy",
+    img: "/assets/Solace/solace_thumbnail.png",
   },
 ];
 
@@ -154,7 +161,16 @@ export default function DesignAndDevelopment() {
               {filteredItems.map((item) => {
                 const content = (
                   <article className="flex flex-col gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center">
-                    <div className="h-24 w-full rounded-1xl bg-gray-300 sm:h-20 sm:w-28" />
+                    {item.img && (
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-full h-auto rounded-lg bg-gray-100 flex-shrink-0 sm:h-20 sm:w-28"
+                      />
+                    )}
+                    {!item.img && (
+                      <div className="h-24 rounded-lg bg-gray-100 flex-shrink-0 sm:h-20 sm:w-28" />
+                    )}
                     <div className="flex-1">
                       <span
                         className="inline-block text-xs capitalize mb-2"
@@ -188,18 +204,34 @@ export default function DesignAndDevelopment() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {filteredItems.map((item) => {
                 const content = (
-                  <article className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
-                    <div className="aspect-[4/3] w-full rounded-1xl bg-gray-300" />
-                    <span
-                      className="inline-block text-xs capitalize mt-3 mb-1"
-                      style={{ color: "var(--olive-green)" }}
-                    >
-                      {item.category}
-                    </span>
-                    <h4 className="font-semibold text-gray-900">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-gray-600 mt-2">{item.summary}</p>
+                  <article className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm">
+                    {item.img ? (
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-full rounded-lg object-cover"
+                        style={{ aspectRatio: "4/3" }}
+                      />
+                    ) : (
+                      <div
+                        className="w-full rounded-lg bg-gray-100"
+                        style={{ aspectRatio: "4/3" }}
+                      />
+                    )}
+                    <div className="p-5">
+                      <span
+                        className="inline-block text-xs capitalize mb-1"
+                        style={{ color: "var(--olive-green)" }}
+                      >
+                        {item.category}
+                      </span>
+                      <h4 className="font-semibold text-gray-900">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-gray-600 mt-2">
+                        {item.summary}
+                      </p>
+                    </div>
                   </article>
                 );
                 return item.href ? (
