@@ -26,20 +26,12 @@ export default function NavBar() {
     >
       <div className="container mx-auto relative flex items-center justify-between sm:grid sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-4 sm:text-left">
         <div className="hidden sm:flex items-center justify-center gap-10 sm:justify-start">
-          <a href="/#projects-section">
+          <a href="/designAndDevelopment">
             <h4
               className="hover:opacity-70"
               style={{ color: "var(--olive-green)" }}
             >
-              Projects
-            </h4>
-          </a>
-          <a href="/#gallery-section">
-            <h4
-              className="hover:opacity-70"
-              style={{ color: "var(--olive-green)" }}
-            >
-              Gallery
+              Design&Development
             </h4>
           </a>
         </div>
@@ -123,14 +115,12 @@ export default function NavBar() {
 
       {isMenuOpen && (
         <div className="sm:hidden mt-4 flex flex-col gap-3 px-2 pb-4">
-          <a href="/#projects-section" onClick={() => setIsMenuOpen(false)}>
+          <a
+            href="/designAndDevelopment"
+            onClick={() => setIsMenuOpen(false)}
+          >
             <span className="block py-1 text-[var(--olive-green)]">
-              Projects
-            </span>
-          </a>
-          <a href="/#gallery-section" onClick={() => setIsMenuOpen(false)}>
-            <span className="block py-1 text-[var(--olive-green)]">
-              Gallery
+              Design&Development
             </span>
           </a>
           <a
